@@ -6,4 +6,4 @@ from .models import Post
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     # https://qiita.com/shonansurvivors/items/12b087cf5ab591273c8c
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    return render(request, 'blog/post_list.html', posts)
