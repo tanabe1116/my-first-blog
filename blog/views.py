@@ -4,6 +4,6 @@ from .models import Post
 
 # Create your views here.
 def post_list(request):
-    posts = Post.objects.order_by('published_date')
+    posts = Post.order_by('published_date')
     # https://qiita.com/shonansurvivors/items/12b087cf5ab591273c8c
     return render(request, 'blog/post_list.html', {'posts': posts})
