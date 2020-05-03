@@ -4,19 +4,14 @@
     </head>
     <body>
         <div>
-            <h1><a href="/">Django Girls Blog</a></h>
+            <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-
+        {%for post in posts%}
         <div>
-            <p>publised :02.05.2020</p>
-            <h2><a href="">first post</a></h2>
-            <p>Hello! Nice to meet you!!</p>
+            <p>publised :{{post.published_date}}</p>
+            <h2><a href="">{{post.title}}</a></h2>
+            <p>{{post.text|linebrealsbr}}</p>
         </div>
-
-        <div>
-            <p>published :02.05.2020</p>
-            <h2><a href="">2番目の投稿</a></h2>
-            <p>Hello! Nice to see you!!</p>
-        </div>
+        {%endfor%}
     </body>
 </html>
