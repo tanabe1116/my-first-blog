@@ -6,9 +6,9 @@ from .forms import PostForm
 
 # Create your views here.
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    #posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     # https://qiita.com/shonansurvivors/items/12b087cf5ab591273c8c
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    return render(request, 'blog/post_list.html', {'posts': Post.objects.all()})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
